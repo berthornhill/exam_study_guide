@@ -6,19 +6,26 @@ Object Oriented Programming
     Given a set of classes, some inheriting from others, correctly identify what methods an instance of each class has access to
     Given a parent and child class, correctly use the super method, passing only the necessary arguments, in the child class initialize method to handle shared initialization logic
     Implement a class inheritance chain using proper Ruby syntax
+
     Explain the difference between public, private, and protected methods
+
         + Public Methods
             - are accessible from outside the class (ex: class_name.some_method)
             - Public methods can be called by anyone---there is no access control.
             - Methods are public by default
+
         + Private Methods
             - Not accessible from outside the class. (ex: class_name.some_method does not execute)
-            - Private methods cannot be called with an explicit receiver. (ex: calling self.some_method inside the class does not exectute    )
             - Because you cannot specify an object when using them, private methods can be called only in the defining class
+            - Private methods cannot be called with an explicit receiver. (ex: calling self.some_method inside the class DOES NOT exectute )
+            - Exception*** explicit receiver rule: explicit receiver can be used on setter methods only.
+
         + Protected Methods
-            -
+            - Protected methods can be invoked only by objects of the defining class and its subclasses. Access is kept within the family.
+            - protected methods can be called with an explicit receiver, so long as the caller is of the same class. (ex: calling self.some_method inside of the class DOES execute)
 
     Explain the difference between inheriting from a class and including a module
+        +
 
 Big O Analysis
 
@@ -86,6 +93,15 @@ CSS
         ol :last-child { some_property: value;  }    => selects last child of a parent tag
         ol :nth-child(even){    '''             }    => selects certain children of a parent tag
         input[type="submit"]:hover {    '''     }    => (selects certain attributes of tags
+
+        the "+" selector will select the first sibling element:
+            => example: div + p 	Selects all <p> elements that are placed immediately after <div> elements
+
+        the ">" selector in CSS to select all p elements that are children of the element
+            => example: div > p 	Selects all <p> elements where the parent is a <div> element
+
+        the :last-child
+            => p:last-child 	Selects every <p> element that is the last child of its parent
 
 
     ex: CSS style-sheet from practice exam.
