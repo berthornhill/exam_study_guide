@@ -130,6 +130,7 @@ Test Driven Development/RSpec
     + Removes user error
     + Make sure code does what it is expected to do
     + write tests for any public methods
+    + makes refactoring easier as sections of code can be tested independently of the whole.
 
     Explain the difference between Unit Tests and Integration Tests
         +  unit test tests as small a portion of code as possible. Utilizes doubling(?!?) to remove potential outside influence affecting results.
@@ -139,15 +140,19 @@ Test Driven Development/RSpec
 
     Describe the basic workflow of Test Driven Development
         + write test, write code, refactor
+            - write a test to define the purpose of the code. Ensure the test fails to remove potential for false positives when running with the intended code.
+            - write code that satisfies the test, limiting to single or very small tests at any given time.
+            - Refactor/optimize after tests pass. Continue running tests to ensure any changes do not affect the intended outcome.
 
     Explain the use case of a double or mock when writing unit tests
-        + A test double is a fake object that we can use to create the desired isolation
+        + A test double is a fake, or mock, object that we can create in testing environment to control for desired outcomes of specific code that might depend on other bits of code.
+            - Rather than utilize some dependent code/method to pass in data, creating a double that can stand in place of any outside required code helps to control the immediate code being tested in isolation.
 
 
     Describe the difference between RSpec's describe and context and when you should use each
         + "it" is RSpec's most basic test unit. All of your actual individual tests will go inside of an it block
-        + "describe" is RSpec's unit of organization. It gathers together several "it" blocks into a single unit and allows you to set up some context for blocks of tests.
-        +
+        + A"describe" is RSpec's unit of testing organization. A "describe" block with "do-end" wraps a test. A string wrapped in quotations is used to describe a method or object on which the tests that follow will be called. Within a "describe" block, "it" blocks are used to describe/produce a particular test and the expected behavior.
+        + A "context" block is functionally the same as "describe" but it is intended to be used to describe as a means of organizing a series of tests that check behaviour under some paticular set of circumstances.
 
     Given an assertion, correctly set up an it block that uses expect to test for the assertion
 
