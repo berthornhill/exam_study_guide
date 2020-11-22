@@ -114,7 +114,7 @@ CSS
     }
 
     .ruby {
-        font-color: red;
+        color: red;
     }
     li > span {
         background-color: yellow;
